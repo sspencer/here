@@ -14,6 +14,7 @@
 		AAC63AC71BD7E0E900988D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC61BD7E0E900988D09 /* Assets.xcassets */; };
 		AAC63ACA1BD7E0E900988D09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */; };
 		AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AAE81F9F1BD7ED9A00CA67C4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAE81F9E1BD7ED9A00CA67C4 /* Podfile */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		AAC63ACB1BD7E0E900988D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigTourTableViewController.h; sourceTree = "<group>"; };
 		AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigTourTableViewController.m; sourceTree = "<group>"; };
+		AAE81F9E1BD7ED9A00CA67C4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		BC205A2281AD921F43DCF6A5 /* libPods-Here.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Here.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3D98FADE0851EC86B219F6 /* Pods-Here.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Here.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Here/Pods-Here.debug.xcconfig"; sourceTree = "<group>"; };
 		F59317C7D692A18DA97F89C6 /* Pods-Here.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Here.release.xcconfig"; path = "Pods/Target Support Files/Pods-Here/Pods-Here.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		AAC63ABA1BD7E0E900988D09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAE81F9E1BD7ED9A00CA67C4 /* Podfile */,
 				AAC63ABB1BD7E0E900988D09 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -165,6 +168,7 @@
 			files = (
 				AAC63ACA1BD7E0E900988D09 /* LaunchScreen.storyboard in Resources */,
 				AAC63AC71BD7E0E900988D09 /* Assets.xcassets in Resources */,
+				AAE81F9F1BD7ED9A00CA67C4 /* Podfile in Resources */,
 				AAC63AC51BD7E0E900988D09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
