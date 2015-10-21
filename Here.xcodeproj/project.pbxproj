@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		AAC63ABC1BD7E0E900988D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63ABB1BD7E0E900988D09 /* main.m */; };
 		AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */; };
-		AAC63AC21BD7E0E900988D09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AC11BD7E0E900988D09 /* ViewController.m */; };
 		AAC63AC51BD7E0E900988D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC31BD7E0E900988D09 /* Main.storyboard */; };
 		AAC63AC71BD7E0E900988D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC61BD7E0E900988D09 /* Assets.xcassets */; };
 		AAC63ACA1BD7E0E900988D09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */; };
+		AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		AAC63ABB1BD7E0E900988D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAC63ABD1BD7E0E900988D09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAC63AC01BD7E0E900988D09 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAC63AC11BD7E0E900988D09 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AAC63AC41BD7E0E900988D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAC63AC61BD7E0E900988D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAC63AC91BD7E0E900988D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAC63ACB1BD7E0E900988D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigTourTableViewController.h; sourceTree = "<group>"; };
+		AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigTourTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				AAC63ABD1BD7E0E900988D09 /* AppDelegate.h */,
 				AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */,
-				AAC63AC01BD7E0E900988D09 /* ViewController.h */,
-				AAC63AC11BD7E0E900988D09 /* ViewController.m */,
+				AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */,
+				AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */,
 				AAC63AC31BD7E0E900988D09 /* Main.storyboard */,
 				AAC63AC61BD7E0E900988D09 /* Assets.xcassets */,
 				AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */,
@@ -110,6 +110,7 @@
 				TargetAttributes = {
 					AAC63AB61BD7E0E900988D09 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 79C5VW8992;
 					};
 				};
 			};
@@ -149,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC63AC21BD7E0E900988D09 /* ViewController.m in Sources */,
+				AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */,
 				AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */,
 				AAC63ABC1BD7E0E900988D09 /* main.m in Sources */,
 			);
@@ -263,6 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Here/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.bigfrog.Here;
@@ -274,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Here/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.bigfrog.Here;

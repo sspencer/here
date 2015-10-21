@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BigTourTableViewController.h
 //  Here
 //
 //  Created by Steve Spencer on 10/21/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BigTourTableViewController : UITableViewController
 
 @end
-
