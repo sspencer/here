@@ -28,6 +28,10 @@
                                     <constraint firstAttribute="width" constant="125" id="tpP-UU-N5x"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="here" translatesAutoresizingMaskIntoConstraints="NO" id="zSV-ox-CTF">
+                                <rect key="frame" x="34" y="112" width="170" height="70"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +53,7 @@
     </scenes>
     <resources>
         <image name="805bootcamp" width="125" height="70"/>
+        <image name="here" width="170" height="70"/>
         <image name="simi" width="1280" height="960"/>
     </resources>
 </document>

@@ -50,4 +50,5 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-Here/PrivateKeys.h
+# Don't checkin parse keys
+PrivateKeys.h

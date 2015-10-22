@@ -14,6 +14,8 @@
 		AAC63AC71BD7E0E900988D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC61BD7E0E900988D09 /* Assets.xcassets */; };
 		AAC63ACA1BD7E0E900988D09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */; };
 		AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35A1BD8717000CF1915 /* Tour.m */; settings = {ASSET_TAGS = (); }; };
+		AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35E1BD8751800CF1915 /* NSDate+Big.m */; settings = {ASSET_TAGS = (); }; };
 		AAE81F9F1BD7ED9A00CA67C4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAE81F9E1BD7ED9A00CA67C4 /* Podfile */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -28,7 +30,12 @@
 		AAC63ACB1BD7E0E900988D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigTourTableViewController.h; sourceTree = "<group>"; };
 		AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigTourTableViewController.m; sourceTree = "<group>"; };
+		AAE2A3591BD8717000CF1915 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		AAE2A35A1BD8717000CF1915 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
+		AAE2A35D1BD8751800CF1915 /* NSDate+Big.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Big.h"; sourceTree = "<group>"; };
+		AAE2A35E1BD8751800CF1915 /* NSDate+Big.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Big.m"; sourceTree = "<group>"; };
 		AAE81F9E1BD7ED9A00CA67C4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		AAE81FA01BD7EDE200CA67C4 /* PrivateKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateKeys.h; sourceTree = "<group>"; };
 		BC205A2281AD921F43DCF6A5 /* libPods-Here.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Here.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3D98FADE0851EC86B219F6 /* Pods-Here.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Here.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Here/Pods-Here.debug.xcconfig"; sourceTree = "<group>"; };
 		F59317C7D692A18DA97F89C6 /* Pods-Here.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Here.release.xcconfig"; path = "Pods/Target Support Files/Pods-Here/Pods-Here.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,15 +91,12 @@
 		AAC63AB91BD7E0E900988D09 /* Here */ = {
 			isa = PBXGroup;
 			children = (
-				AAC63ABD1BD7E0E900988D09 /* AppDelegate.h */,
-				AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */,
-				AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */,
-				AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */,
-				AAC63AC31BD7E0E900988D09 /* Main.storyboard */,
-				AAC63AC61BD7E0E900988D09 /* Assets.xcassets */,
-				AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */,
-				AAC63ACB1BD7E0E900988D09 /* Info.plist */,
+				AAE81FA11BD7EEDC00CA67C4 /* App */,
+				AAE81FA21BD7EEFF00CA67C4 /* Controllers */,
+				AAE2A35C1BD8726F00CF1915 /* Models */,
 				AAC63ABA1BD7E0E900988D09 /* Supporting Files */,
+				AAE81FA31BD7EF4900CA67C4 /* UI */,
+				AAE2A3601BD8758700CF1915 /* Utils */,
 			);
 			path = Here;
 			sourceTree = "<group>";
@@ -104,6 +108,54 @@
 				AAC63ABB1BD7E0E900988D09 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE2A35C1BD8726F00CF1915 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAE2A3591BD8717000CF1915 /* Tour.h */,
+				AAE2A35A1BD8717000CF1915 /* Tour.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AAE2A3601BD8758700CF1915 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAE2A35D1BD8751800CF1915 /* NSDate+Big.h */,
+				AAE2A35E1BD8751800CF1915 /* NSDate+Big.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		AAE81FA11BD7EEDC00CA67C4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AAC63ABD1BD7E0E900988D09 /* AppDelegate.h */,
+				AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */,
+				AAE81FA01BD7EDE200CA67C4 /* PrivateKeys.h */,
+				AAC63ACB1BD7E0E900988D09 /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		AAE81FA21BD7EEFF00CA67C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */,
+				AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AAE81FA31BD7EF4900CA67C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AAC63AC31BD7E0E900988D09 /* Main.storyboard */,
+				AAC63AC61BD7E0E900988D09 /* Assets.xcassets */,
+				AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */,
+				AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */,
 				AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */,
 				AAC63ABC1BD7E0E900988D09 /* main.m in Sources */,
+				AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
