@@ -19,7 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    //[Parse setApplicationId:HereParseAppliationId clientKey:HereParseClientKey];
+    [Parse setApplicationId:HereParseAppliationId clientKey:HereParseClientKey];
+    NSString *storyboardId = ([PFUser currentUser] != nil) ? @"Main" : @"Login";
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:storyboardId];
 
     return YES;
 }

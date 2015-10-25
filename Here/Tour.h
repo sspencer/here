@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class PFObject;
+
 @interface Tour : NSObject
 
 @property (nonatomic, assign, readonly) NSInteger tourId;
 @property (nonatomic, strong, readonly) NSDate *startDate;
 @property (nonatomic, strong, readonly) NSDate *endDate;
-@property (nonatomic, strong, readonly) NSString *startDateString;
 @property (nonatomic, strong, readonly) NSString *endDateString;
+@property (nonatomic, strong, readonly) NSArray *campers;
+@property (nonatomic, strong, readonly) NSArray *programs;
 
-+ (instancetype)tourWithId:(NSInteger)tourId from:(NSString *)startDate to:(NSString *)endDate;
++ (instancetype)tourWithObject:(PFObject *)obj;
 
 @end

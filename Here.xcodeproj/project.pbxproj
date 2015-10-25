@@ -8,18 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		7009F42A7233F222093F036B /* libPods-Here.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC205A2281AD921F43DCF6A5 /* libPods-Here.a */; };
+		AA4084FD1BDC4D5E00BE11AD /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4084FC1BDC4D5E00BE11AD /* Program.m */; };
+		AA4085001BDD114500BE11AD /* BigProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */; };
+		AAA3B60A1BD96D6500276F73 /* BigLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3B6091BD96D6500276F73 /* BigLoginViewController.m */; };
+		AAA3B60D1BD9730600276F73 /* Camper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3B60C1BD9730600276F73 /* Camper.m */; };
 		AAC63ABC1BD7E0E900988D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63ABB1BD7E0E900988D09 /* main.m */; };
 		AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63ABE1BD7E0E900988D09 /* AppDelegate.m */; };
 		AAC63AC51BD7E0E900988D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC31BD7E0E900988D09 /* Main.storyboard */; };
 		AAC63AC71BD7E0E900988D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC61BD7E0E900988D09 /* Assets.xcassets */; };
 		AAC63ACA1BD7E0E900988D09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */; };
-		AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35A1BD8717000CF1915 /* Tour.m */; settings = {ASSET_TAGS = (); }; };
-		AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35E1BD8751800CF1915 /* NSDate+Big.m */; settings = {ASSET_TAGS = (); }; };
-		AAE81F9F1BD7ED9A00CA67C4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAE81F9E1BD7ED9A00CA67C4 /* Podfile */; settings = {ASSET_TAGS = (); }; };
+		AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */; };
+		AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35A1BD8717000CF1915 /* Tour.m */; };
+		AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE2A35E1BD8751800CF1915 /* NSDate+Big.m */; };
+		AAE81F9F1BD7ED9A00CA67C4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAE81F9E1BD7ED9A00CA67C4 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4084FB1BDC4D5E00BE11AD /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		AA4084FC1BDC4D5E00BE11AD /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		AA4084FE1BDD114500BE11AD /* BigProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigProgramTableViewController.h; sourceTree = "<group>"; };
+		AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigProgramTableViewController.m; sourceTree = "<group>"; };
+		AAA3B6081BD96D6500276F73 /* BigLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigLoginViewController.h; sourceTree = "<group>"; };
+		AAA3B6091BD96D6500276F73 /* BigLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigLoginViewController.m; sourceTree = "<group>"; };
+		AAA3B60B1BD9730600276F73 /* Camper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camper.h; sourceTree = "<group>"; };
+		AAA3B60C1BD9730600276F73 /* Camper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camper.m; sourceTree = "<group>"; };
 		AAC63AB71BD7E0E900988D09 /* Here.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Here.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC63ABB1BD7E0E900988D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAC63ABD1BD7E0E900988D09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +125,10 @@
 		AAE2A35C1BD8726F00CF1915 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAA3B60B1BD9730600276F73 /* Camper.h */,
+				AAA3B60C1BD9730600276F73 /* Camper.m */,
+				AA4084FB1BDC4D5E00BE11AD /* Program.h */,
+				AA4084FC1BDC4D5E00BE11AD /* Program.m */,
 				AAE2A3591BD8717000CF1915 /* Tour.h */,
 				AAE2A35A1BD8717000CF1915 /* Tour.m */,
 			);
@@ -142,8 +158,12 @@
 		AAE81FA21BD7EEFF00CA67C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AAA3B6081BD96D6500276F73 /* BigLoginViewController.h */,
+				AAA3B6091BD96D6500276F73 /* BigLoginViewController.m */,
 				AAC63AD11BD7E26800988D09 /* BigTourTableViewController.h */,
 				AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */,
+				AA4084FE1BDD114500BE11AD /* BigProgramTableViewController.h */,
+				AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -151,9 +171,9 @@
 		AAE81FA31BD7EF4900CA67C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AAC63AC31BD7E0E900988D09 /* Main.storyboard */,
 				AAC63AC61BD7E0E900988D09 /* Assets.xcassets */,
 				AAC63AC81BD7E0E900988D09 /* LaunchScreen.storyboard */,
+				AAC63AC31BD7E0E900988D09 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -266,10 +286,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC63AD31BD7E26800988D09 /* BigTourTableViewController.m in Sources */,
+				AAA3B60D1BD9730600276F73 /* Camper.m in Sources */,
 				AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */,
 				AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */,
+				AA4085001BDD114500BE11AD /* BigProgramTableViewController.m in Sources */,
+				AA4084FD1BDC4D5E00BE11AD /* Program.m in Sources */,
 				AAC63ABC1BD7E0E900988D09 /* main.m in Sources */,
 				AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */,
+				AAA3B60A1BD96D6500276F73 /* BigLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

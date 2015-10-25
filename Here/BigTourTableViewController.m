@@ -7,14 +7,22 @@
 //
 
 #import "BigTourTableViewController.h"
-#import "Tour.h"
+#import <Parse/Parse.h>
 #import "NSDate+Big.h"
+#import "Tour.h"
+#import "Camper.h"
+#import "BigProgramTableViewController.h"
+
+
+// TODO - how is current tour id determined??
+#define HERE_TOUR_ID 66
 
 @interface BigTourTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *weeks;
 @property (nonatomic, strong) NSDateFormatter *fullDayFormatter;
 @property (nonatomic, strong) NSDateFormatter *ymdFormatter;
+@property (nonatomic, strong) Tour *tour;
 @end
 
 
@@ -31,17 +39,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Tour 66";
 
-
     _fullDayFormatter = [[NSDateFormatter alloc] init];
     _fullDayFormatter.dateFormat = @"EEEE, MMM d";
 
     _ymdFormatter = [[NSDateFormatter alloc] init];
     _ymdFormatter.dateFormat = @"yyyy-MM-dd";
 
-    Tour *tour = [Tour tourWithId:67 from:@"2015-09-14" to:@"2015-10-23"];
-
-    [self generateTour:tour];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getTour:HERE_TOUR_ID];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -79,11 +89,8 @@
     if (_weeks) {
         NSDate *date = _weeks[indexPath.section][indexPath.row];
         NSString *day = [self fullDayFormat:date];
-        /*
         NSUInteger offset = (indexPath.section * 7) + indexPath.row;
-        NSUInteger count = [_bootcamp dayCount:offset];
-        */
-        NSUInteger count = 0;
+        NSUInteger count = [self dayCount:offset];
 
         cell = [tableView dequeueReusableCellWithIdentifier:@"weekday" forIndexPath:indexPath];
         cell.textLabel.text = day;
@@ -103,19 +110,63 @@
 
 
 
-/*
 #pragma mark - Navigation
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_weeks) {
+        NSDate *date = _weeks[indexPath.section][indexPath.row];
+        NSInteger offset = (indexPath.section * 7) + indexPath.row;
+        NSArray *dateOffset = @[date, [NSNumber numberWithInteger:offset]];
+        [self performSegueWithIdentifier:@"program" sender:dateOffset];
+    }
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"program"]) {
+        NSArray *data = sender;
+        NSDate *date = data[0];
+        NSNumber *offset = data[1];
+
+        BigProgramTableViewController *controller = segue.destinationViewController;
+        [controller displayTour:_tour onDate:date withOffset:[offset integerValue]];
+    }
 }
-*/
+
 
 #pragma mark - Here
-- (void)generateTour:(Tour *)tour {
 
+- (NSString *)fullDayFormat:(NSDate *)date {
+    return [_fullDayFormatter stringFromDate:date];
+}
+
+
+- (void)getTour:(NSUInteger)tourId {
+
+    // Find all posts by the current user (ACL should restrict objects that get retrieved)
+    PFQuery *query = [PFQuery queryWithClassName:@"Tour"];
+    [query whereKey:@"tourId" equalTo:@(tourId)];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(getTourCallback:error:)];
+}
+
+// back on main thread
+- (void)getTourCallback:(NSArray *)retrievedObjects error:(NSError *)error {
+    if (error) {
+        // show alert dialog, error table entry
+        NSLog(@"ERROR: %@", error);
+        return;
+    }
+
+    if ([retrievedObjects count] < 1) {
+        return;
+    }
+
+    self.tour = [Tour tourWithObject:retrievedObjects[0]];
+
+    // Set nav bar title
+    self.title = [NSString stringWithFormat:@"Tour %ld", _tour.tourId];
+
+    // Calculate the days of the week which populate the table
     _weeks = [NSMutableArray arrayWithCapacity:6];
     NSMutableArray *days;
     int index = 0;
@@ -123,14 +174,14 @@
     NSDate *startDate;
     NSDate *date;
 
-    while (index < 50 && (![dateStr isEqualToString:tour.endDateString])) {
+    while (index < 50 && (![dateStr isEqualToString:_tour.endDateString])) {
         if (!days || index % 7 == 0) {
             days = [NSMutableArray arrayWithCapacity:7];
             [_weeks addObject:days];
         }
 
         if (!startDate) {
-            startDate = tour.startDate;
+            startDate = _tour.startDate;
             date = startDate;
         } else {
             date = [startDate big_addDays:index];
@@ -140,9 +191,17 @@
         [days addObject:date];
         index++;
     }
+
+    [self.tableView reloadData];
 }
 
-- (NSString *)fullDayFormat:(NSDate *)date {
-    return [_fullDayFormatter stringFromDate:date];
+- (NSUInteger)dayCount:(NSUInteger)offset {
+    NSUInteger count = 0;
+    for (Camper *camper in _tour.campers) {
+        count += [camper dayCount:offset];
+    }
+
+    return count;
 }
+
 @end
