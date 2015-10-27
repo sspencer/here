@@ -10,6 +10,7 @@
 		7009F42A7233F222093F036B /* libPods-Here.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC205A2281AD921F43DCF6A5 /* libPods-Here.a */; };
 		AA4084FD1BDC4D5E00BE11AD /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4084FC1BDC4D5E00BE11AD /* Program.m */; };
 		AA4085001BDD114500BE11AD /* BigProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */; };
+		AA4085031BDEA7D300BE11AD /* BigAttendanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4085021BDEA7D300BE11AD /* BigAttendanceTableViewController.m */; };
 		AAA3B60A1BD96D6500276F73 /* BigLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3B6091BD96D6500276F73 /* BigLoginViewController.m */; };
 		AAA3B60D1BD9730600276F73 /* Camper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3B60C1BD9730600276F73 /* Camper.m */; };
 		AAC63ABC1BD7E0E900988D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC63ABB1BD7E0E900988D09 /* main.m */; };
@@ -28,6 +29,8 @@
 		AA4084FC1BDC4D5E00BE11AD /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		AA4084FE1BDD114500BE11AD /* BigProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigProgramTableViewController.h; sourceTree = "<group>"; };
 		AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigProgramTableViewController.m; sourceTree = "<group>"; };
+		AA4085011BDEA7D300BE11AD /* BigAttendanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigAttendanceTableViewController.h; sourceTree = "<group>"; };
+		AA4085021BDEA7D300BE11AD /* BigAttendanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigAttendanceTableViewController.m; sourceTree = "<group>"; };
 		AAA3B6081BD96D6500276F73 /* BigLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigLoginViewController.h; sourceTree = "<group>"; };
 		AAA3B6091BD96D6500276F73 /* BigLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigLoginViewController.m; sourceTree = "<group>"; };
 		AAA3B60B1BD9730600276F73 /* Camper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camper.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				AAC63AD21BD7E26800988D09 /* BigTourTableViewController.m */,
 				AA4084FE1BDD114500BE11AD /* BigProgramTableViewController.h */,
 				AA4084FF1BDD114500BE11AD /* BigProgramTableViewController.m */,
+				AA4085011BDEA7D300BE11AD /* BigAttendanceTableViewController.h */,
+				AA4085021BDEA7D300BE11AD /* BigAttendanceTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				AAE2A35F1BD8751800CF1915 /* NSDate+Big.m in Sources */,
 				AAC63ABF1BD7E0E900988D09 /* AppDelegate.m in Sources */,
 				AA4085001BDD114500BE11AD /* BigProgramTableViewController.m in Sources */,
+				AA4085031BDEA7D300BE11AD /* BigAttendanceTableViewController.m in Sources */,
 				AA4084FD1BDC4D5E00BE11AD /* Program.m in Sources */,
 				AAC63ABC1BD7E0E900988D09 /* main.m in Sources */,
 				AAE2A35B1BD8717000CF1915 /* Tour.m in Sources */,

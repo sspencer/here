@@ -9,6 +9,9 @@
 #import "BigProgramTableViewController.h"
 #import "Tour.h"
 #import "Program.h"
+#import "Camper.h"
+#import "BigAttendanceTableViewController.h"
+
 
 @interface BigProgramTableViewController()
 
@@ -41,6 +44,12 @@
     self.title = [abbrDateFormat stringFromDate:_date];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    // counts may have changed so reload must be triggered or cached data will show
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,7 +79,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     Program *program;
-
+    NSUInteger count;
     if ([self isWeekday:_date]) {
         program = _tour.programs[indexPath.row];
     } else {
@@ -79,28 +88,47 @@
         program = _tour.programs[programSize-1];
     }
 
+    count = [self dayCount:program];
     cell.textLabel.text = program.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", count];
 
     return cell;
 }
 
 
 
-/*
+
  #pragma mark - Navigation
 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Program *program = _tour.programs[indexPath.row];
+    [self performSegueWithIdentifier:@"attendance" sender:program];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"attendance"]) {
+        Program *program = sender;
+        BigAttendanceTableViewController *controller = segue.destinationViewController;
+        [controller displayTour:_tour program:program withOffset:_dateOffset];
+     }
+}
+
 
 #pragma mark - Here
 
 - (BOOL)isWeekday:(NSDate *)date {
     NSInteger weekday = [_gregorian component:(NSCalendarUnitWeekday) fromDate:date];
     return (weekday > 1 && weekday < 7);
+}
+
+- (NSUInteger)dayCount:(Program *)program {
+    NSUInteger count = 0;
+    for (Camper *camper in _tour.campers) {
+        count += [camper dayCount:_dateOffset program:program];
+    }
+
+    return count;
 }
 
 @end

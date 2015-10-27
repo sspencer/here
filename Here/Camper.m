@@ -7,6 +7,7 @@
 //
 
 #import "Camper.h"
+#import "Program.h"
 
 @interface Camper ()
 
@@ -26,7 +27,7 @@
     return c;
 }
 
-- (BOOL)didAttendAtOffset:(NSUInteger)offset program:(BootcampProgram)program {
+- (BOOL)didAttendAtOffset:(NSUInteger)offset program:(Program *)program {
     if (offset > [_attendance length]) {
         return NO;
     }
@@ -34,18 +35,18 @@
     NSString *digit = [_attendance substringWithRange:NSMakeRange(offset, 1)];
     NSInteger attended = strtol([digit UTF8String], NULL, 16);
 
-    return attended & program;
+    return attended & program.mask;
 }
 
-- (void)attendedAtOffset:(NSUInteger)offset program:(BootcampProgram)program selected:(BOOL)selected {
+- (void)attendedAtOffset:(NSUInteger)offset program:(Program *)program selected:(BOOL)selected {
     NSString *digit = [_attendance substringWithRange:NSMakeRange(offset, 1)];
     // int res = strtol( [yourString UTF8String], NULL, base) –  loretoparisi Nov 28 '13 at 18:55
     NSInteger attended = strtol([digit UTF8String], NULL, 16);
 
     if (selected) {
-        attended = attended | program;
+        attended = attended | program.mask;
     } else {
-        attended -= program;
+        attended -= program.mask;
     }
 
 
@@ -54,23 +55,24 @@
     _attendance = str;
 }
 
-- (NSUInteger)dayCount:(NSUInteger)offset {
+- (NSUInteger)dayCount:(NSUInteger)offset programs:(NSArray *)programs {
     NSUInteger count = 0;
     NSString *digit = [_attendance substringWithRange:NSMakeRange(offset, 1)];
     NSInteger attended = strtol([digit UTF8String], NULL, 16);
 
-    if (attended & BootcampProgram0530) { count++; }
-    if (attended & BootcampProgram0700) { count++; }
-    if (attended & BootcampProgram1800) { count++; }
-    if (attended & BootcampProgramXtra) { count++; }
+    for (Program *program in programs) {
+        if (attended & program.mask) {
+            count++;
+        }
+    }
 
     return count;
 }
 
-- (NSUInteger)dayCount:(NSUInteger)offset program:(BootcampProgram)program {
+- (NSUInteger)dayCount:(NSUInteger)offset program:(Program *)program {
     NSString *digit = [_attendance substringWithRange:NSMakeRange(offset, 1)];
     NSInteger attended = strtol([digit UTF8String], NULL, 16);
-    return (attended & program) ? 1 : 0;
+    return (attended & program.mask) ? 1 : 0;
 }
 
 - (NSString *)serialize {

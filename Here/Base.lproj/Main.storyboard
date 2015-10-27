@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="1270" y="744"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Big Attendance Table View Controller-->
         <scene sceneID="zL6-Cf-in6">
             <objects>
-                <tableViewController id="OLg-Z7-xsk" sceneMemberID="viewController">
+                <tableViewController id="OLg-Z7-xsk" customClass="BigAttendanceTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oJr-jH-S6P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,15 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
-// Attendance string is just single digit (0-f), so only the first 4 values
-// are used for it.
-typedef NS_OPTIONS(NSInteger, BootcampProgram) {
-    BootcampProgram0530    = 1 << 0, // START bitmask for attendance
-    BootcampProgram0700    = 1 << 1,
-    BootcampProgram1800    = 1 << 2,
-    BootcampProgramXtra    = 1 << 3, // END bitmask for attendance
-};
+@class Program;
 
 @interface Camper : NSObject
 
@@ -25,10 +17,10 @@ typedef NS_OPTIONS(NSInteger, BootcampProgram) {
 
 + (instancetype)camperWithName:(NSString *)name attendance:(NSString *)attendance;
 
-- (BOOL)didAttendAtOffset:(NSUInteger)offset program:(BootcampProgram)program;
-- (void)attendedAtOffset:(NSUInteger)offset program:(BootcampProgram)program selected:(BOOL)selected;
-- (NSUInteger)dayCount:(NSUInteger)offset;
-- (NSUInteger)dayCount:(NSUInteger)offset program:(BootcampProgram)program;
+- (BOOL)didAttendAtOffset:(NSUInteger)offset program:(Program *)program;
+- (void)attendedAtOffset:(NSUInteger)offset program:(Program *)program selected:(BOOL)selected;
+- (NSUInteger)dayCount:(NSUInteger)offset programs:(NSArray *)programs;
+- (NSUInteger)dayCount:(NSUInteger)offset program:(Program *)program;
 - (NSString *)serialize;
 
 @end

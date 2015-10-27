@@ -45,13 +45,15 @@
     _ymdFormatter = [[NSDateFormatter alloc] init];
     _ymdFormatter.dateFormat = @"yyyy-MM-dd";
 
+    [self getTour:HERE_TOUR_ID];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getTour:HERE_TOUR_ID];
-}
 
+    // counts may have changed so reload must be triggered or cached data will show
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -198,7 +200,7 @@
 - (NSUInteger)dayCount:(NSUInteger)offset {
     NSUInteger count = 0;
     for (Camper *camper in _tour.campers) {
-        count += [camper dayCount:offset];
+        count += [camper dayCount:offset programs:_tour.programs];
     }
 
     return count;
